@@ -10,8 +10,22 @@
 </head>
 <body>
     <header>
-        <h1>Weather Watch</h1>
+        <article class="weather">
+            <div class="row"> 
+                <h2 class="col-3">weather watch</h2>
+                <h1 id="city-today" class="col-9">City Name</h1> 
+            </div>
+
+            <div class="today row">
+                <ul id="conditions" class="ul col-8">
+                    <li></li>
+                </ul>
+                <div class="image col-4"></div>
+            </div>
+        </article>
     </header>
+
+
 
     <article class="search-form">
         <div class="search-card">
@@ -24,16 +38,8 @@
         </div>
     </article>
 
-    <Section class="weather">
-        <article class="card">
-            <h1 class="row">City Name</h1> 
-            <div class="today row">
-                <div class="p col-8"></div>
-                <div class="image col-4"></div>
-            </div>
-        </article>
 
-        <article>
+        <article class="day-display">
             <div class="day row">
                 <div class="p col-9"></div>
                 <div class="icon col-3"></div>
@@ -54,7 +60,9 @@
                 <div class="icon col-3"></div>
             </div>
             <div class="day row">
-                <div class="p col-9"></div>
+                <div class="p col-9">
+                    Sample
+                </div>
                 <div class="icon col-3"></div>
             </div>
         </article>

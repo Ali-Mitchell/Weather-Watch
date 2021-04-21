@@ -1,13 +1,53 @@
 
 
 header {
-    background: url("https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/cloud/cumulus-cloud.jpg")
+    margin-bottom: 20px;
 }
 
-header h1 {
-    text-align: center;
-    padding: 20px;
+body {
+    background-image: url("/assets/images/Sunflower.jpeg");
 }
+
+
+/* weather display */
+.weather {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    color:white;
+}
+
+.weather h1 {
+   
+    padding-right: 20px;
+    text-align: right;
+}
+
+.weather h2 {
+    font-size: 14px;
+  
+}
+
+
+
+
+ .today {
+    background-color: lime;
+
+ }
+
+.today .ul {
+    height: 200px;
+    background-color: magenta;
+}
+
+.today .image{
+    height: 100px;
+    background-color:mediumblue;
+}
+
 
 /* search bar */
 .search-form {
@@ -20,11 +60,13 @@ header h1 {
 
 .search-card h1 {
     padding-left: 20px;
+    color: white;
 }
 
 .search-card {
     height: inherit;
-    background-color:sandybrown;
+    background-color:rgba(0,0,0,.50);
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
@@ -46,44 +88,22 @@ header h1 {
     background-color: saddlebrown;
 }
 
-/* weather display */
-.weather {
-    width: 90%;
-    margin: 0 auto;
-}
-.weather .card {
-    background-color: lightblue;
-}
-.weather h1 {
-    background: lightsalmon;
-    padding-left: 20px;
-}
-
-.weather .today {
-    background-color: lime;
-}
-
-.today .p {
-    height: 200px;
-    background-color: magenta;
-}
-
-.today .image{
-    height: 100px;
-    background-color:mediumblue;
+.day-display {
+    width:90%;
+    margin:0 auto;
 }
 
 .day {
-    border: midnightblue;
+    background-color:rgba(0,0,0,.75);
     margin: 20px;
+    color:white;
 }
 
 .day .p {
     height: 100px;
-    background-color: olive;
+    
 }
 
 .day .icon {
     height: 100px;
-    background-color: orange;
 }
