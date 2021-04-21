@@ -1,0 +1,89 @@
+
+
+header {
+    background: url("https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/cloud/cumulus-cloud.jpg")
+}
+
+header h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+/* search bar */
+.search-form {
+    border:  blue;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    
+}
+
+.search-card h1 {
+    padding-left: 20px;
+}
+
+.search-card {
+    height: inherit;
+    background-color:sandybrown;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.search-card input {
+    width: 50%;
+    margin-left: 20px;
+}
+
+.search-card .btn {
+    width: 40%;
+    margin: 20px;
+}
+
+/* saved searches */
+.grid {
+    height: 100px;
+    background-color: saddlebrown;
+}
+
+/* weather display */
+.weather {
+    width: 90%;
+    margin: 0 auto;
+}
+.weather .card {
+    background-color: lightblue;
+}
+.weather h1 {
+    background: lightsalmon;
+    padding-left: 20px;
+}
+
+.weather .today {
+    background-color: lime;
+}
+
+.today .p {
+    height: 200px;
+    background-color: magenta;
+}
+
+.today .image{
+    height: 100px;
+    background-color:mediumblue;
+}
+
+.day {
+    border: midnightblue;
+    margin: 20px;
+}
+
+.day .p {
+    height: 100px;
+    background-color: olive;
+}
+
+.day .icon {
+    height: 100px;
+    background-color: orange;
+}
