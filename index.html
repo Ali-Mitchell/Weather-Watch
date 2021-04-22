@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Watch</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="./assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -17,9 +20,15 @@
             </div>
 
             <div class="today row">
-                <ul id="conditions" class="ul col-8">
-                    <li></li>
-                </ul>
+                <div id="conditions" class="ul col-8">
+                    <div id="temperature" class="row">
+                            75*
+                    </div>
+                    <div class="row">
+                        <div class="wind col-6">Sample</div>
+                        <div class="humidity col-6">Smaple</div>
+                    </div>
+                </div>
                 <div class="image col-4"></div>
             </div>
         </article>
@@ -29,7 +38,7 @@
 
     <article class="search-form">
         <div class="search-card">
-            <h1>Sample</h1>
+            <h1>Search</h1>
             <input> </input>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
@@ -57,12 +66,6 @@
 
             <div class="day row">
                 <div class="p col-9"></div>
-                <div class="icon col-3"></div>
-            </div>
-            <div class="day row">
-                <div class="p col-9">
-                    Sample
-                </div>
                 <div class="icon col-3"></div>
             </div>
         </article>
