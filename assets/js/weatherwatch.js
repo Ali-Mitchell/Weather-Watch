@@ -23,7 +23,7 @@ function pageLoadWeather(){
             cityNameSearch.value = "";
 
             $('#future-forecast').empty();
-            $("#icon").attr("src", "http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png");
+            $("#icon").attr("src", "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png");
             $("#temperature").text(data.main.temp +"°");
             $("#wind").text(data.wind.speed);
             $("#humidity").text(data.main.humidity);
@@ -72,7 +72,7 @@ function searchWeather(city){
             // getUvIndex(data.coord.lat, data.coord.lon);
             // getForecast(city);
             console.log(data, city);
-            $("#icon").attr("src", "http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png");
+            $("#icon").attr("src", "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png");
             $("#temperature").text(data.main.temp +"°");
             $("#wind").text(data.wind.speed);
             $("#humidity").text(data.main.humidity);
@@ -82,7 +82,7 @@ function searchWeather(city){
 
 //api to find UV index and assign color
 function getUvIndex(latitude, longitude){
-    var apiUrl = "http://api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&appid=6d97afac271bf76bda029031ba851c8a";
+    var apiUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&appid=6d97afac271bf76bda029031ba851c8a";
 
     fetch(apiUrl).then(function(response){
         response.json().then(function(data){
