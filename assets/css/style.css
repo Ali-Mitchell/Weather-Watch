@@ -43,7 +43,7 @@ body {
     height: 200px;
 }
 
-.today .image{
+.today #icon {
     height: 100px;
 }
 

@@ -15,21 +15,29 @@
     <header>
         <article class="weather">
             <div class="row"> 
-                <h2 class="col-3">weather watch</h2>
+                <h2 id="date" class="col-3"></h2>
                 <h1 id="city-today" class="col-9">City Name</h1> 
             </div>
 
             <div class="today row">
                 <div id="conditions" class="ul col-8">
                     <div id="temperature" class="row">
-                            75*
                     </div>
                     <div class="row">
-                        <div class="wind col-6">Sample</div>
-                        <div class="humidity col-6">Smaple</div>
+                        <div class="wind col-6">Wind: <span id="wind"></span> MPH</div>
+                        <div class="humidity col-6">Wind:<span id="humidity"></span>MPH</div>
                     </div>
                 </div>
-                <div class="image col-4"></div>
+                <div class="col-4"> 
+                    <div class="row">
+                        <img id="icon"> </img>
+                    </div>
+                    <div class="row">
+                        <img id="uv-index"> </img>
+                    </div>
+                </div>
+                  
+
             </div>
         </article>
     </header>
@@ -39,29 +47,30 @@
     <article class="search-form">
         <div class="search-card">
             <h1>Search</h1>
-            <input> </input>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <input id="search-input" class="form-control control-form"> </input>
+            <a id="search-button" href="#" class="btn btn-primary">Go somewhere</a>
         </div>
 
         <div class="grid row">
+            <ul id="search-history" class="list-group"></ul>
         </div>
     </article>
 
 
-        <article class="day-display">
+        <article id="future-forecast" class="day-display">
             <div class="day row">
                 <div class="p col-9"></div>
-                <div class="icon col-3"></div>
+                <div class=" col-3"></div>
             </div>
 
             <div class="day row">
                 <div class="p col-9"></div>
-                <div class="icon col-3"></div>
+                <div class=" col-3"></div>
             </div>
 
             <div class="day row">
                 <div class="p col-9"></div>
-                <div class="icon col-3"></div>
+                <div class=" col-3"></div>
             </div>
 
             <div class="day row">
