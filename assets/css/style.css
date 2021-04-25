@@ -35,8 +35,8 @@ body {
   
 }
 
- .today {
-
+ .today .UV{
+     padding-top: 20px;
 }
 
 .today .ul {
@@ -52,7 +52,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 100px;
+    font-size: 75px;
     font-weight: bold;
 }
 
@@ -66,6 +66,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.today .visual {
+    background-color:rgba(0,0,0,.50);
+    border-radius: 12px;
 }
 
 /* search bar */

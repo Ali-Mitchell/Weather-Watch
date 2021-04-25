@@ -90,15 +90,15 @@ function getUvIndex(latitude, longitude){
             uvIndex.textContent = data.value;
 
             if (uvIndex.textContent < 3){
-                uvIndex.setAttribute("src", "background-color:green;");
+                uvIndex.setAttribute("src", "./assets/images/white-01.png");
             } else if(uvIndex.textContent < 6){
-                uvIndex.setAttribute("src", "background-color:yellow;");
+                uvIndex.setAttribute("src", "./assets/images/white-02.png");
             } else if(uvIndex.textContent < 8){
-                uvIndex.setAttribute("src", "background-color:orange;");
+                uvIndex.setAttribute("src", "./assets/images/white-03.png");
             } else if(uvIndex.textContent < 11){
-                uvIndex.setAttribute("src", "background-color:orange;");
+                uvIndex.setAttribute("src", "./assets/images/white-04.png");
             }else{
-                uvIndex.setAttribute("src", "background-color:red;");
+                uvIndex.setAttribute("src", "./assets/images/white-05.png");
             }
         });
     });
