@@ -15,3 +15,4 @@ https://ali-mitchell.github.io/Weather-Watch/
 
 ## Screenshot of deployed site 
 
+![image](https://user-images.githubusercontent.com/79877350/116035668-9db64880-a622-11eb-81b1-c2267183321c.png)
