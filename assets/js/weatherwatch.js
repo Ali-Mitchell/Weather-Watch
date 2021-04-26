@@ -37,6 +37,8 @@ pageLoadWeather();
 //calls function that searches user input and saves to local storage
 function submitNameSearch(event){
 
+
+    $("#future-forecast").empty();
     var cityName = cityNameSearch.value.trim();
 
     if (cityName){
@@ -75,6 +77,8 @@ function addSearchHistory(){
     }
 };
 
+// function for searching a saved city on button click
+
 function savedCitySearch(searchCity){
     console.log(searchCity);
     searchWeather(searchCity);
@@ -97,7 +101,7 @@ function searchWeather(city){
         response.json().then(function(data){
             //uv index
             UvIndex(data.coord.lat, data.coord.lon);
-            // getForecast(city);
+            getForecast(city);
             console.log(data, city);
             $("#icon").attr("src", "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png");
             $("#temperature").text(data.main.temp +"°");
@@ -132,4 +136,40 @@ function UvIndex(latitude, longitude){
 }
 
     
+//api to pull 5 day forecast and display dynamically
+function getForecast(searchValue){
+
+    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=6f71826bd75816cd22846a8ccb598cda&units=imperial";
+
+    fetch(apiUrl).then(function(response){
+        response.json().then(function(data){
+            //uv index
+            
+            for (var i = 5; i < 40; i += 8){
+                $("#future-forecast").append(`
+            <div class="day row">
+                <div class="p col-9">
+                    <h6 class="future-date" style="float: left;"></h6>
+                    <ul>
+                        <li>Temp: ${data.list[i].main.temp}&#176</li>
+                        <li>Wind: ${data.list[i].wind.speed} mph</li>
+                        <li>Humidity: ${data.list[i].main.humidity}%</li>
+                    </ul>
+                </div>
+                <div class=" col-3">
+                    <img class="future-icon" src="http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png">
+                </div>
+            </div>
+
+                `)
+               
+            }
+            for (var x = 1; x <= 5; x++){
+                $(".future-date").eq(x - 1).text(moment().add([x], "d").format("(MM/DD/YYYY)"));
+                
+            }
+        });
+
+    });
+}
 

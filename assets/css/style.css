@@ -5,7 +5,7 @@ header {
 }
 
 body {
-    background-image: url("../images/Sunflower.jpeg");
+    background-image: url("../images/Sunflower.jpg");
 }
 
 
@@ -131,12 +131,12 @@ body {
 
 /* future forecast */
 .day-display {
-    width:90%;
+    width:85%;
     margin:0 auto;
 }
 
 .day {
-    height: 100px;
+    height: 150px;
     background-color:rgba(0,0,0,.75);
     margin: 20px;
     color:white;
@@ -144,9 +144,11 @@ body {
 }
 
 .day .p {
-    
-    
+    display:flex;
+    flex-direction: column;
+    padding: 10px;
 }
+
 
 .day .icon {
     
