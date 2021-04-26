@@ -52,9 +52,30 @@ function submitNameSearch(event){
         
         list.push(cityName);
         localStorage.setItem('searchHistoryList', JSON.stringify(list));
+        addSearchHistory();
         console.log(list);
 
-}
+};
+
+// function for adding a button element with a previus 
+function addSearchHistory(){
+    searchHistory.innerHTML = "";
+    for (i = 0; i < list.length; i++){
+        var savedSearch = document.createElement("button");
+        savedSearch.textContent = list[i];
+
+        console.log(savedSearch);
+        // savedSearch.classList.add("btn");
+        savedSearch.setAttribute("savedCityName", list[i]); 
+        searchHistory.appendChild(savedSearch);
+        
+        savedSearch.addEventListener("click", function(){
+            // historyNameSearch(this.getAttribute("savedCityName"));
+        });
+    }
+};
+
+
 
 //event listener for button click when city is submitted through input element
 searchButton.addEventListener("click", function(){   

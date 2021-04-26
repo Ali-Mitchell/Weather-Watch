@@ -106,11 +106,29 @@ body {
 }
 
 /* saved searches */
-.grid {
-    height: 100px;
-   
+
+#search-history {
+    border-radius: 12px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: left;
 }
 
+#search-history button {
+    padding: 10px;
+    text-transform: uppercase;
+    margin: 5px;
+    color:white;
+    letter-spacing: 2px;
+    border-radius: 12px;
+    background-color:rgba(0,0,0,.50);
+    display: flex;
+
+    /* btn", "flex-row", "justify-space-between", "align-center", "search-list" */
+}
+
+/* future forecast */
 .day-display {
     width:90%;
     margin:0 auto;
