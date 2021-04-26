@@ -5,17 +5,17 @@ var currentDate =document.getElementById("date");
 var uvIndex = document.getElementById("uv-index");
 var todaysWeather = document.querySelector("todays-weather");
 var searchHistory = document.getElementById("search-history");
-var list = [];
+var list = JSON.parse(localStorage.getItem("searchHistoryList")) || [];
 
 
 // Page starts by loading Salt Lake City Current Conditions
 function pageLoadWeather(){
-    var saltLakeUrl = "https://api.openweathermap.org/data/2.5/weather?q=Salt Lake&appid=6d97afac271bf76bda029031ba851c8a&units=imperial";
+    var saltLakeUrl = "https://api.openweathermap.org/data/2.5/weather?q=Salt Lake&appid=6f71826bd75816cd22846a8ccb598cda&units=imperial";
 
     fetch(saltLakeUrl).then(function(response){
         response.json().then(function(data){
             //uv index
-            getUvIndex(data.coord.lat, data.coord.lon);
+            UvIndex(data.coord.lat, data.coord.lon);
 
               // Update Dom with object values
             cityNameToday.textContent = "Salt Lake City";
@@ -34,10 +34,9 @@ function pageLoadWeather(){
 pageLoadWeather();
 
 
-//function to receive search value and push to other functions
+//calls function that searches user input and saves to local storage
 function submitNameSearch(event){
 
-    // $("#future-forecast").empty();
     var cityName = cityNameSearch.value.trim();
 
     if (cityName){
@@ -49,27 +48,27 @@ function submitNameSearch(event){
         alert("Please enter a valid city name");
     }
 
-    //save searches to local storage
-    
-    // list.push(cityName);
-    // localStorage.setItem("searchHistoryList", JSON.stringify(string));
+    //set search history inside of an array in Local Storage
+        
+        list.push(cityName);
+        localStorage.setItem('searchHistoryList', JSON.stringify(list));
+        console.log(list);
 
-};
+}
 
 //event listener for button click when city is submitted through input element
 searchButton.addEventListener("click", function(){   
-    //calls function that searches using input and saves to local storage
     submitNameSearch();
 });
 
 //api to query based on search input
 function searchWeather(city){
-    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=6d97afac271bf76bda029031ba851c8a&units=imperial";
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=6f71826bd75816cd22846a8ccb598cda&units=imperial";
 
     fetch(apiUrl).then(function(response){
         response.json().then(function(data){
             //uv index
-            // getUvIndex(data.coord.lat, data.coord.lon);
+            UvIndex(data.coord.lat, data.coord.lon);
             // getForecast(city);
             console.log(data, city);
             $("#icon").attr("src", "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png");
@@ -81,7 +80,7 @@ function searchWeather(city){
 };
 
 //api to find UV index and assign color
-function getUvIndex(latitude, longitude){
+function UvIndex(latitude, longitude){
     var apiUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&appid=6d97afac271bf76bda029031ba851c8a";
 
     fetch(apiUrl).then(function(response){
@@ -105,36 +104,4 @@ function getUvIndex(latitude, longitude){
 }
 
     
-//     var history = JSON.parse(localStorage.getItem("searchHistoryList"));
 
-//     // clear the search input
-//     searchHistory.innerHTML = "";
-//     list.forEach(function(item){
-//         // display search history below the search bar
-
-//         var historyList = document.createElement("li");
-//         // what does this item do?
-//         historyList.textContent = item;
-//         historyList.classList.add("flex-row", "justify-space-between", "align-center", "search-list");
-//         searchHistory.appendChild(historyList);
-//         historyList.addEventListener("click", function() {
-//             historyNameSearch(item);
-//         })
-//         console.log("hello");
-
-//     })
-
-
-// }
-
-
-
-// function historyNameSearch(searchCity){
-//     searchWeather(searchCity);
-//     cityNameToday.textContent = searchCity + moment().format("(MM/DD/YYYY)");
-//     $("#future-forecast").empty();
-// }
-
-
-// //create event listener for click of <li> 
-// //does the same thing as submitNameSearch, but takes search history name instead of input name
