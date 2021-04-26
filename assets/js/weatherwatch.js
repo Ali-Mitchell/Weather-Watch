@@ -70,11 +70,18 @@ function addSearchHistory(){
         searchHistory.appendChild(savedSearch);
         
         savedSearch.addEventListener("click", function(){
-            // historyNameSearch(this.getAttribute("savedCityName"));
+            savedCitySearch(this.getAttribute("savedCityName"));
         });
     }
 };
 
+function savedCitySearch(searchCity){
+    console.log(searchCity);
+    searchWeather(searchCity);
+    cityNameToday.textContent = searchCity;
+    currentDate.textContent =  moment().format("dddd, Do MMMM");
+    $("#future-forecast").empty();
+}
 
 
 //event listener for button click when city is submitted through input element

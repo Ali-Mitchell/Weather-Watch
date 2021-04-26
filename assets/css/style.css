@@ -116,13 +116,14 @@ body {
 }
 
 #search-history button {
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
     text-transform: uppercase;
     margin: 5px;
-    color:white;
+    color:black;
     letter-spacing: 2px;
     border-radius: 12px;
-    background-color:rgba(0,0,0,.50);
+    border: none;
+    background-color:rgba(255,255,255,.90);
     display: flex;
 
     /* btn", "flex-row", "justify-space-between", "align-center", "search-list" */
